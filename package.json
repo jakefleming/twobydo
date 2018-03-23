@@ -5,6 +5,7 @@
   "repository": "https://github.com/jakefleming/jakeflem.git",
   "author": "jake <jcbflmng@gmail.com>",
   "license": "MIT",
+  "homepage": "https://jakefleming.github.io/jakeflem/",
   "dependencies": {
     "blendid": "^4.4.3"
   }
