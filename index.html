@@ -1,214 +1,214 @@
-<!doctype html><html><head><meta charset="utf-8"><title></title><link rel="stylesheet" href="stylesheets/app-1b5eb66461.css"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script><!-- Generate using http://realfavicongenerator.net/ --></head><body><div id="board" class="clear"><a href="#" id="add-note">+</a><div class="y-axis"><div class="y-axis-title-top" id="y-axis-title-top" contenteditable>Shitt</div><div class="y-axis-title-bottom" id="y-axis-title-bottom" contenteditable>farts</div></div><div class="x-axis"><div class="x-axis-title-right" id="x-axis-title-right" contenteditable>farts</div><div class="x-axis-title-left" id="x-axis-title-left" contenteditable>farts</div></div><!-- <div id="to-do">
-			</div>
-			<div id="in-progress">
-			</div>
-			<div id="done">
-			</div> --></div><script>document.getElementById('y-axis-title-top').innerHTML = localStorage['titleTop'] || 'Title Top';
-    document.getElementById('x-axis-title-right').innerHTML = localStorage['titleRight'] || 'Title Right';
-    document.getElementById('y-axis-title-bottom').innerHTML = localStorage['titleBottom'] || 'Title Bottom';
-    document.getElementById('x-axis-title-left').innerHTML = localStorage['titleLeft'] || 'Title Left';
+<!doctype html><html><head><meta charset="utf-8"><title></title><link rel="stylesheet" href="stylesheets/app-2b3e682b3b.css"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script><!-- Generate using http://realfavicongenerator.net/ --></head><body><a href="#" id="add-note">+</a><div class="sidebar"><h1 class="logotype">twobydo</h1><div class="sidebar-item active">Personal Tasks</div><div class="sidebar-item">Work Tasks</div></div><div class="main"><div id="board" class="clear"><div class="y-axis"><div class="y-axis-title-top" id="y-axis-title-top" contenteditable>Shitt</div><div class="y-axis-title-bottom" id="y-axis-title-bottom" contenteditable>farts</div></div><div class="x-axis"><div class="x-axis-title-right" id="x-axis-title-right" contenteditable>farts</div><div class="x-axis-title-left" id="x-axis-title-left" contenteditable>farts</div></div><!-- <div id="to-do">
+  			</div>
+  			<div id="in-progress">
+  			</div>
+  			<div id="done">
+  			</div> --></div></div><script>document.getElementById('y-axis-title-top').innerHTML = localStorage['titleTop'] || 'Title Top';
+  document.getElementById('x-axis-title-right').innerHTML = localStorage['titleRight'] || 'Title Right';
+  document.getElementById('y-axis-title-bottom').innerHTML = localStorage['titleBottom'] || 'Title Bottom';
+  document.getElementById('x-axis-title-left').innerHTML = localStorage['titleLeft'] || 'Title Left';
 
 
- setInterval(function() {
-      localStorage['titleTop'] = document.getElementById('y-axis-title-top').innerHTML;
-      localStorage['titleRight'] = document.getElementById('x-axis-title-right').innerHTML;
-      localStorage['titleBottom'] = document.getElementById('y-axis-title-bottom').innerHTML;
-      localStorage['titleLeft'] = document.getElementById('x-axis-title-left').innerHTML;
- }, 1 * 1000);
+setInterval(function() {
+    localStorage['titleTop'] = document.getElementById('y-axis-title-top').innerHTML;
+    localStorage['titleRight'] = document.getElementById('x-axis-title-right').innerHTML;
+    localStorage['titleBottom'] = document.getElementById('y-axis-title-bottom').innerHTML;
+    localStorage['titleLeft'] = document.getElementById('x-axis-title-left').innerHTML;
+}, 1 * 1000);
 
 
 
-    (function() {
+  (function() {
 
-  "use strict";
+"use strict";
 
-  // addEventListener
-    function addEventHandler(oNode, sEvt, fFunc, bCaptures) {
-        if (oNode.addEventListener) {
-            oNode.addEventListener(sEvt, fFunc, bCaptures);
-        } else {
-            oNode.attachEvent("on" + sEvt, fFunc);
-        }
-    }
-
-  function init() {
-    // Add new note
-    var addNote = $("#add-note");
-    addNote.click(function() {
-      var createSticky = new StickyNote(100, 100, "Title", "");
-    });
-
-    // Display all sticky in localStorage
-    var allSticky = localStorage.length;
-    for (var i = 0; i < allSticky; i++) {
-        var localSticky = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        var createSticky = new StickyNote(localSticky.posTop, localSticky.posLeft, localSticky.stickyTitle,
-                                      localSticky.stickyText, localSticky.stickyId);
-    }
+// addEventListener
+  function addEventHandler(oNode, sEvt, fFunc, bCaptures) {
+      if (oNode.addEventListener) {
+          oNode.addEventListener(sEvt, fFunc, bCaptures);
+      } else {
+          oNode.attachEvent("on" + sEvt, fFunc);
+      }
   }
 
-  // Sticky Class
-  function StickyNote(posTop, posLeft, stickyTitle, stickyText, stickyId) {
+function init() {
+  // Add new note
+  var addNote = $("#add-note");
+  addNote.click(function() {
+    var createSticky = new StickyNote(100, 100, "Title", "");
+  });
 
-    this.posTop = posTop;
-    this.posLeft = posLeft;
-    this.stickyTitle = stickyTitle;
-    this.stickyText = stickyText;
-    this.stickyBackground = "#fed6d6";
+  // Display all sticky in localStorage
+  var allSticky = localStorage.length;
+  for (var i = 0; i < allSticky; i++) {
+      var localSticky = JSON.parse(localStorage.getItem(localStorage.key(i)));
+      var createSticky = new StickyNote(localSticky.posTop, localSticky.posLeft, localSticky.stickyTitle,
+                                    localSticky.stickyText, localSticky.stickyId);
+  }
+}
 
-    if (!stickyId) {
-      this.stickyId = +new Date();
-    } else {
-      this.stickyId = stickyId;
-    }
+// Sticky Class
+function StickyNote(posTop, posLeft, stickyTitle, stickyText, stickyId) {
 
-    this.createSN();
+  this.posTop = posTop;
+  this.posLeft = posLeft;
+  this.stickyTitle = stickyTitle;
+  this.stickyText = stickyText;
+  this.stickyBackground = "#fed6d6";
+
+  if (!stickyId) {
+    this.stickyId = +new Date();
+  } else {
+    this.stickyId = stickyId;
   }
 
-  StickyNote.prototype.heandlerSN = function() {
-    var self = this;
+  this.createSN();
+}
 
-    // Attach update heandler
-    var saveSticky = $(".sticky-drag");
+StickyNote.prototype.heandlerSN = function() {
+  var self = this;
 
-    // Animate draging sticky
-    // saveSticky.on('mousedown', function(e) {
-    //   $(this).removeClass("pulseDown").addClass("pulseUp");
-    // });
+  // Attach update heandler
+  var saveSticky = $(".sticky-drag");
 
-    // Save sticky
-    saveSticky.on('mouseup', function(e) {
-      console.log("sa");
-      self.stickyUpdate($(this).parent().attr("id"), $(this).parent().css("top"),
-                        $(this).parent().css("left"), $(this).parent().children("h2").html(),
-                        $(this).parent().children("p").html());
-      // Check position in board
-      self.checkPosition($(this).parent().css("left"), $(this).parent().attr("id"));
-      // Update save icon
-      $(this).parent().find(".sticky-save").removeClass("save-no");
-      // Animate mouseup stickey
-      // $(this).removeClass("pulseUp").addClass("pulseDown");
-    });
+  // Animate draging sticky
+  // saveSticky.on('mousedown', function(e) {
+  //   $(this).removeClass("pulseDown").addClass("pulseUp");
+  // });
 
-    // Save sticky clicking outside
-    var stickyContainer = $(".sticky");
-    stickyContainer.on('focusout', function() {
-      self.stickyUpdate($(this).attr("id"), $(this).css("top"),
-                        $(this).css("left"), $(this).children("h2").html(),
-                        $(this).children("p").html());
-      $(this).find(".sticky-save").removeClass("save-no");
-    });
+  // Save sticky
+  saveSticky.on('mouseup', function(e) {
+    console.log("sa");
+    self.stickyUpdate($(this).parent().attr("id"), $(this).parent().css("top"),
+                      $(this).parent().css("left"), $(this).parent().children("h2").html(),
+                      $(this).parent().children("p").html());
+    // Check position in board
+    self.checkPosition($(this).parent().css("left"), $(this).parent().attr("id"));
+    // Update save icon
+    $(this).parent().find(".sticky-save").removeClass("save-no");
+    // Animate mouseup stickey
+    // $(this).removeClass("pulseUp").addClass("pulseDown");
+  });
 
-    // Change icon wher editing text and title
-    var stickyText = $(".sticky p");
-    var stickyTitle = $(".sticky h2");
-    var cobined = stickyTitle.add(stickyText);
-    $(cobined).on('keyup', function() {
-      $(this).parent().find(".sticky-save").addClass("save-no");
-    });
+  // Save sticky clicking outside
+  var stickyContainer = $(".sticky");
+  stickyContainer.on('focusout', function() {
+    self.stickyUpdate($(this).attr("id"), $(this).css("top"),
+                      $(this).css("left"), $(this).children("h2").html(),
+                      $(this).children("p").html());
+    $(this).find(".sticky-save").removeClass("save-no");
+  });
 
-    // Attach delete heandler
-    var deleteSticky = $(".sticky-delete");
-    deleteSticky.click(function() {
-      self.deleteSN($(this).parent().attr("id"));
-    });
-  }
+  // Change icon wher editing text and title
+  var stickyText = $(".sticky p");
+  var stickyTitle = $(".sticky h2");
+  var cobined = stickyTitle.add(stickyText);
+  $(cobined).on('keyup', function() {
+    $(this).parent().find(".sticky-save").addClass("save-no");
+  });
 
-  StickyNote.prototype.createSN = function() {
+  // Attach delete heandler
+  var deleteSticky = $(".sticky-delete");
+  deleteSticky.click(function() {
+    self.deleteSN($(this).parent().attr("id"));
+  });
+}
 
-    // Create new sticky
-    var i = 100;
-    var self = this;
-    var stickyName = "Sticky-" + this.stickyId;
-    var stickyHTML = '<div id="' + this.stickyId + '" class="sticky animated hinge bounceInDown"' +
-                      ' style="top:' + this.posTop + 'px; left:' + this.posLeft + 'px; z-index: ' + (i++) + '">' +
-                      '<div class="handle sticky-drag"></div>' +
-                      '<span class="sticky-save">&#8595;</span>' +
-                      '<span class="sticky-delete">&times;</span>' +
-                      '<h2 class="sticky-title" contentEditable="true">' + this.stickyTitle + '</h2>' +
-                      '<p class="sticky-text" contentEditable="true">' + this.stickyText + '</p>' +
+StickyNote.prototype.createSN = function() {
+
+  // Create new sticky
+  var i = 100;
+  var self = this;
+  var stickyName = "Sticky-" + this.stickyId;
+  var stickyHTML = '<div id="' + this.stickyId + '" class="sticky animated hinge bounceInDown"' +
+                    ' style="top:' + this.posTop + 'px; left:' + this.posLeft + 'px; z-index: ' + (i++) + '">' +
+                    '<div class="handle sticky-drag"></div>' +
+                    '<span class="sticky-save">&#8595;</span>' +
+                    '<span class="sticky-delete">&times;</span>' +
+                    '<h2 class="sticky-title" contentEditable="true">' + this.stickyTitle + '</h2>' +
+                    '<p class="sticky-text" contentEditable="true">' + this.stickyText + '</p>' +
 
 
-                    '</div>';
+                  '</div>';
 
+  var saveSN = {
+      'stickyId': this.stickyId,
+      'posTop': this.posTop,
+      'posLeft': this.posLeft,
+      'stickyTitle': this.stickyTitle,
+      'stickyText': this.stickyText
+  };
+  // Save in localStorage
+  localStorage.setItem(stickyName, JSON.stringify(saveSN));
+  // After create object display on board
+  this.displaySN(stickyHTML);
+}
+
+StickyNote.prototype.stickyUpdate = function(stickyId, posTop, posLeft, stickyTitle, stickyText) {
+    var stickyName = "Sticky-" + stickyId;
     var saveSN = {
-        'stickyId': this.stickyId,
-        'posTop': this.posTop,
-        'posLeft': this.posLeft,
-        'stickyTitle': this.stickyTitle,
-        'stickyText': this.stickyText
+      'stickyId': parseInt(stickyId),
+      'posTop': parseInt(posTop),
+      'posLeft': parseInt(posLeft),
+      'stickyTitle': stickyTitle,
+      'stickyText': stickyText
     };
     // Save in localStorage
     localStorage.setItem(stickyName, JSON.stringify(saveSN));
-    // After create object display on board
-    this.displaySN(stickyHTML);
-  }
+}
 
-  StickyNote.prototype.stickyUpdate = function(stickyId, posTop, posLeft, stickyTitle, stickyText) {
-      var stickyName = "Sticky-" + stickyId;
-      var saveSN = {
-        'stickyId': parseInt(stickyId),
-        'posTop': parseInt(posTop),
-        'posLeft': parseInt(posLeft),
-        'stickyTitle': stickyTitle,
-        'stickyText': stickyText
-      };
-      // Save in localStorage
-      localStorage.setItem(stickyName, JSON.stringify(saveSN));
-  }
+StickyNote.prototype.checkPosition = function(leftPos, stickyId) {
+  // Check position on current drag sticky
+  var inProgress = $("#in-progress").position();
+  var done = $("#done").position();
+  // if ((parseInt(leftPos) + 90) > done.left) {
+  //   $("#" + stickyId).css({
+  //     "background-color": "#9dfd9d",
+  //     "border-color": "#8afd8a",
+  //      "text-decoration": "line-through"
+  //   });
+  // } else if ((parseInt(leftPos) + 90) > inProgress.left) {
+  //   $("#" + stickyId).css({
+  //     "background-color": "#fdfd9d",
+  //     "border-color": "#fcfc83",
+  //     "text-decoration": "none"
+  //   });
+  // } else {
+  //   $("#" + stickyId).css({
+  //     "background-color": "#fed6d6",
+  //     "border-color": "#fecbcb",
+  //     "text-decoration": "none"
+  //   });
+  // }
 
-  StickyNote.prototype.checkPosition = function(leftPos, stickyId) {
-    // Check position on current drag sticky
-    var inProgress = $("#in-progress").position();
-    var done = $("#done").position();
-    // if ((parseInt(leftPos) + 90) > done.left) {
-    //   $("#" + stickyId).css({
-    //     "background-color": "#9dfd9d",
-    //     "border-color": "#8afd8a",
-    //      "text-decoration": "line-through"
-    //   });
-    // } else if ((parseInt(leftPos) + 90) > inProgress.left) {
-    //   $("#" + stickyId).css({
-    //     "background-color": "#fdfd9d",
-    //     "border-color": "#fcfc83",
-    //     "text-decoration": "none"
-    //   });
-    // } else {
-    //   $("#" + stickyId).css({
-    //     "background-color": "#fed6d6",
-    //     "border-color": "#fecbcb",
-    //     "text-decoration": "none"
-    //   });
-    // }
+}
 
-  }
+StickyNote.prototype.deleteSN = function(stickyId) {
+  var stickyName = "Sticky-" + stickyId;
+  localStorage.removeItem(stickyName);
+  $("#" + stickyId).removeClass("pulseDown").addClass("bounceOutDown")
+}
 
-  StickyNote.prototype.deleteSN = function(stickyId) {
-    var stickyName = "Sticky-" + stickyId;
-    localStorage.removeItem(stickyName);
-    $("#" + stickyId).removeClass("pulseDown").addClass("bounceOutDown")
-  }
+StickyNote.prototype.displaySN = function(stickyHTML) {
+  var board = $("#board");
+  // Display on board
+  board.append(stickyHTML);
+  // Checl positions on board
+  this.checkPosition(this.posLeft, this.stickyId);
+  // Attach drag
+  this.dragSN();
+  // Attach events
+  this.heandlerSN();
+}
 
-  StickyNote.prototype.displaySN = function(stickyHTML) {
-    var board = $("#board");
-    // Display on board
-    board.append(stickyHTML);
-    // Checl positions on board
-    this.checkPosition(this.posLeft, this.stickyId);
-    // Attach drag
-    this.dragSN();
-    // Attach events
-    this.heandlerSN();
-  }
+StickyNote.prototype.dragSN = function() {
+  var stickyDrag = $(".sticky");
+  stickyDrag.draggable( {
+    handle : ".sticky-drag",
+    stack: stickyDrag,
+  } );
+}
 
-  StickyNote.prototype.dragSN = function() {
-    var stickyDrag = $(".sticky");
-    stickyDrag.draggable( {
-      handle : ".sticky-drag",
-      stack: stickyDrag,
-    } );
-  }
-
-  addEventHandler(window, "load", init, false);
+addEventHandler(window, "load", init, false);
 
 })();</script></body></html>

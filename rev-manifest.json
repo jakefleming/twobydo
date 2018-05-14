@@ -23,6 +23,16 @@
   "fonts/Boxout-Thin.eot": "fonts/Boxout-Thin-608e82d8a5.eot",
   "fonts/Boxout-Thin.woff": "fonts/Boxout-Thin-04a617ea20.woff",
   "fonts/Boxout-Thin.woff2": "fonts/Boxout-Thin-533bae8c16.woff2",
+  "fonts/Covik_Sans_Mono-Black.woff": "fonts/Covik_Sans_Mono-Black-198726bdce.woff",
+  "fonts/Covik_Sans_Mono-Black.woff2": "fonts/Covik_Sans_Mono-Black-881714d0b1.woff2",
+  "fonts/Covik_Sans_Mono-Bold.woff": "fonts/Covik_Sans_Mono-Bold-c6bfdf2124.woff",
+  "fonts/Covik_Sans_Mono-Bold.woff2": "fonts/Covik_Sans_Mono-Bold-73e505556b.woff2",
+  "fonts/Covik_Sans_Mono-Medium.woff": "fonts/Covik_Sans_Mono-Medium-088cc4fd2c.woff",
+  "fonts/Covik_Sans_Mono-Medium.woff2": "fonts/Covik_Sans_Mono-Medium-a1166d8abe.woff2",
+  "fonts/Covik_Sans_Mono-Regular.woff": "fonts/Covik_Sans_Mono-Regular-527833e604.woff",
+  "fonts/Covik_Sans_Mono-Regular.woff2": "fonts/Covik_Sans_Mono-Regular-7771e92999.woff2",
+  "fonts/Covik_Sans_Mono-Semibold.woff": "fonts/Covik_Sans_Mono-Semibold-48df39782d.woff",
+  "fonts/Covik_Sans_Mono-Semibold.woff2": "fonts/Covik_Sans_Mono-Semibold-35a7742293.woff2",
   "fonts/Goiters-Black.eot": "fonts/Goiters-Black-d322627a55.eot",
   "fonts/Goiters-Black.woff": "fonts/Goiters-Black-72a2652171.woff",
   "fonts/Goiters-Black.woff2": "fonts/Goiters-Black-987e47d5b6.woff2",
@@ -48,5 +58,5 @@
   "fonts/Goiters-Thin.woff": "fonts/Goiters-Thin-0200254830.woff",
   "fonts/Goiters-Thin.woff2": "fonts/Goiters-Thin-8fa7a40f69.woff2",
   "javascripts/app.js": "javascripts/app-f83a2d1d612fae2b14a3.js",
-  "stylesheets/app.css": "stylesheets/app-1b5eb66461.css"
+  "stylesheets/app.css": "stylesheets/app-2b3e682b3b.css"
 }
