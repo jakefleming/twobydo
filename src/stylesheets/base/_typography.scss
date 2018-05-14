@@ -1,3 +1,57 @@
-body {
-  font-family: sans-serif;
+// Font weights
+$font-weight-01: 100;
+$font-weight-02: 200;
+$font-weight-03: 300;
+$font-weight-04: 400;
+$font-weight-05: 500;
+$font-weight-06: 600;
+$font-weight-07: 700;
+$font-weight-08: 800;
+
+// Font families
+$font-01: 'Goiters';
+$font-02: 'Boxout';
+$font-03: 'Covik Sans Mono';
+
+//Cardinal Grotesque Reference
+@font-face { font-family: "Goiters"; font-weight: $font-weight-01; src: url(../fonts/Goiters-Thin.woff); }
+@font-face { font-family: "Goiters"; font-weight: $font-weight-02; src: url(../fonts/Goiters-Light.woff); }
+@font-face { font-family: "Goiters"; font-weight: $font-weight-03; src: url(../fonts/Goiters-Regular.woff); }
+@font-face { font-family: "Goiters"; font-weight: $font-weight-04; src: url(../fonts/Goiters-Medium.woff); }
+@font-face { font-family: "Goiters"; font-weight: $font-weight-05; src: url(../fonts/Goiters-Semibold.woff); }
+@font-face { font-family: "Goiters"; font-weight: $font-weight-06; src: url(../fonts/Goiters-Bold.woff); }
+@font-face { font-family: "Goiters"; font-weight: $font-weight-07; src: url(../fonts/Goiters-ExtraBold.woff); }
+@font-face { font-family: "Goiters"; font-weight: $font-weight-08; src: url(../fonts/Goiters-Black.woff); }
+
+//Cardinal Grotesque Reference
+@font-face { font-family: "Boxout"; font-weight: $font-weight-01; src: url(../fonts/Boxout-Thin.woff); }
+@font-face { font-family: "Boxout"; font-weight: $font-weight-02; src: url(../fonts/Boxout-Light.woff); }
+@font-face { font-family: "Boxout"; font-weight: $font-weight-03; src: url(../fonts/Boxout-Regular.woff); }
+@font-face { font-family: "Boxout"; font-weight: $font-weight-04; src: url(../fonts/Boxout-Medium.woff); }
+@font-face { font-family: "Boxout"; font-weight: $font-weight-05; src: url(../fonts/Boxout-Semibold.woff); }
+@font-face { font-family: "Boxout"; font-weight: $font-weight-06; src: url(../fonts/Boxout-Bold.woff); }
+@font-face { font-family: "Boxout"; font-weight: $font-weight-07; src: url(../fonts/Boxout-ExtraBold.woff); }
+@font-face { font-family: "Boxout"; font-weight: $font-weight-08; src: url(../fonts/Boxout-Black.woff); }
+
+//Cardinal Grotesque Reference
+@font-face { font-family: "Covik Sans Mono"; font-weight: $font-weight-03; src: url(../fonts/Covik_Sans_Mono-Regular.woff); }
+@font-face { font-family: "Covik Sans Mono"; font-weight: $font-weight-04; src: url(../fonts/Covik_Sans_Mono-Medium.woff); }
+@font-face { font-family: "Covik Sans Mono"; font-weight: $font-weight-05; src: url(../fonts/Covik_Sans_Mono-Semibold.woff); }
+@font-face { font-family: "Covik Sans Mono"; font-weight: $font-weight-06; src: url(../fonts/Covik_Sans_Mono-Bold.woff); }
+@font-face { font-family: "Covik Sans Mono"; font-weight: $font-weight-08; src: url(../fonts/Covik_Sans_Mono-Black.woff); }
+
+
+
+.y-axis-title-top, .y-axis-title-bottom, .x-axis-title-left, .x-axis-title-right {
+  font-family: $font-03;
+  font-weight: $font-weight-04;
+  font-size: 12px;
+}
+
+.sticky-title {
+  font-size: 16px;
+}
+
+.sticky-text {
+  font-size: 14px;
 }
