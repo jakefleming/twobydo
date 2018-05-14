@@ -1,42 +1,9 @@
-
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="stylesheets/app.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-    <!-- Generate using http://realfavicongenerator.net/ -->
-
-
-    
-  </head>
-  <body>
-    
-
-  <div id="board" class="clear">
-			<a href="#" id="add-note">+</a>
-      <div class="y-axis">
-        <div class="y-axis-title-top" id="y-axis-title-top" contenteditable>Shitt</div>
-        <div class="y-axis-title-bottom" id="y-axis-title-bottom" contenteditable>farts</div>
-      </div>
-      <div class="x-axis">
-        <div class="x-axis-title-right" id="x-axis-title-right" contenteditable>farts</div>
-        <div class="x-axis-title-left" id="x-axis-title-left" contenteditable>farts</div>
-      </div>
-			<!-- <div id="to-do">
+<!doctype html><html><head><meta charset="utf-8"><title></title><link rel="stylesheet" href="stylesheets/app-1b5eb66461.css"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script><!-- Generate using http://realfavicongenerator.net/ --></head><body><div id="board" class="clear"><a href="#" id="add-note">+</a><div class="y-axis"><div class="y-axis-title-top" id="y-axis-title-top" contenteditable>Shitt</div><div class="y-axis-title-bottom" id="y-axis-title-bottom" contenteditable>farts</div></div><div class="x-axis"><div class="x-axis-title-right" id="x-axis-title-right" contenteditable>farts</div><div class="x-axis-title-left" id="x-axis-title-left" contenteditable>farts</div></div><!-- <div id="to-do">
 			</div>
 			<div id="in-progress">
 			</div>
 			<div id="done">
-			</div> -->
-	</div>
-
-  
-    <script>
-    document.getElementById('y-axis-title-top').innerHTML = localStorage['titleTop'] || 'Title Top';
+			</div> --></div><script>document.getElementById('y-axis-title-top').innerHTML = localStorage['titleTop'] || 'Title Top';
     document.getElementById('x-axis-title-right').innerHTML = localStorage['titleRight'] || 'Title Right';
     document.getElementById('y-axis-title-bottom').innerHTML = localStorage['titleBottom'] || 'Title Bottom';
     document.getElementById('x-axis-title-left').innerHTML = localStorage['titleLeft'] || 'Title Left';
@@ -244,7 +211,4 @@
 
   addEventHandler(window, "load", init, false);
 
-})();
-    </script>
-  </body>
-</html>
+})();</script></body></html>
